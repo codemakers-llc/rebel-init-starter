@@ -8,7 +8,7 @@
     "test": "node --test --test-concurrency=1 tests/*.test.js"
   },
   "dependencies": {
-    "@code-makers/rebel": "0.1.0-alpha.8.17"
+    "@code-makers/rebel": "0.1.0-alpha.8.18"
   },
   "engines": {
     "node": ">=20"
