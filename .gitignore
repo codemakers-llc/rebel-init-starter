@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.tgz
+*.zip
+*.log
+.DS_Store
+.vscode/
+
+# Mutable local prototype data and personal commands
+scripts/data/runtime.json
+comands.txt

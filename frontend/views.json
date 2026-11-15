@@ -1,0 +1,94 @@
+{
+  "views": [
+    {
+      "name": "Dashboard",
+      "route": "/dashboard",
+      "file": "features/dashboard.js",
+      "icon": "layout-dashboard",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Modules",
+      "route": "/catalogs/modules",
+      "file": "features/modules.js",
+      "icon": "database",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Request Categories",
+      "route": "/catalogs/request-categories",
+      "file": "features/request-categories.js",
+      "icon": "list-tree",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Evaluation Criteria",
+      "route": "/catalogs/evaluation-criteria",
+      "file": "features/evaluation-criteria.js",
+      "icon": "clipboard-list",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Request List & Creation",
+      "route": "/requests",
+      "file": "features/request-list.js",
+      "icon": "file-text",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Request Review",
+      "route": "/request-review",
+      "file": "features/request-review.js",
+      "icon": "list-checks",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "View Designer",
+      "route": "/view-designer",
+      "file": "features/builder.js",
+      "icon": "panels-top-left",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Menu Designer",
+      "route": "/menu-designer",
+      "file": "features/menu-designer.js",
+      "icon": "list-tree",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Theme Studio",
+      "route": "/theme-studio",
+      "file": "features/theme-studio.js",
+      "icon": "palette",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Audit Trail",
+      "route": "/audit-trail",
+      "file": "features/audit-trail.js",
+      "icon": "activity",
+      "roles": [
+        "demo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+/* CodeView 2.1.4 — refinamiento integral del sistema visual. */
+.oa-admin-page select,.oa-admin-page select:focus,.oa-admin-page option{color:var(--ink,#ebf4ff)}
+.oa-admin-page select{appearance:none;-webkit-appearance:none;width:100%;max-width:100%;min-height:42px;background-color:var(--surface-2,#132b42);border:1px solid var(--line-strong,#42617b);border-radius:9px;padding:10px 38px 10px 12px;line-height:1.4;font:inherit;color:var(--ink,#eaf4fb);cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237fbbd5' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-position:right 12px center;background-size:16px;background-repeat:no-repeat}
+.oa-admin-page select option{background:#14283a;color:#f1f7fb}
+.oa-admin-page select:focus-visible{outline:2px solid var(--accent,#56c5e8);outline-offset:2px}
+.oa-admin-page .oaact-crud-toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;width:100%;margin-bottom:18px}
+.oa-admin-page .oaact-crud-toolbar>input[type=search]{margin-left:auto;flex:1 1 360px;max-width:none;min-width:min(320px,100%);height:42px}
+.oa-admin-page .oaact-crud-toolbar>.btn--primary{order:-1;white-space:nowrap}
+.oa-admin-page .oaact-crud-toolbar>h3{display:none}
+.oa-admin-page .admin-table th:last-child,.oa-admin-page .admin-table td[data-label="Acciones"],.oa-admin-page .admin-table td:last-child:has(.oaact-users-actions){text-align:right}
+.oa-admin-page .oaact-users-actions{justify-content:flex-end;display:flex;gap:8px}
+.oa-admin-page .oaact-profile-menu{min-width:min(330px,calc(100vw - 24px));padding:9px;gap:2px;background:var(--surface,#10253b);color:var(--ink,#f0f8ff);border:1px solid var(--line,#38516a);box-shadow:0 20px 55px #0006;border-radius:14px}
+.oa-admin-page .oaact-profile-row{display:grid;grid-template-columns:25px 75px minmax(0,1fr);gap:8px;align-items:center;padding:11px 9px;font-size:.79rem;border-bottom:1px solid var(--line,#263d54)}
+.oa-admin-page .oaact-profile-icon{font-size:1rem;color:var(--accent,#5cc8f5)}
+.oa-admin-page .oaact-profile-key{color:var(--ink-2,#a5bcd0)}
+.oa-admin-page .oaact-profile-row strong{font-size:.8rem;text-align:right;overflow-wrap:anywhere}
+.oa-admin-page .oaact-profile-menu .oaact-profile-action{background:transparent;color:inherit;border-radius:8px;padding:12px;text-align:left;font-size:.82rem;border:0;cursor:pointer}
+.oa-admin-page .oaact-profile-menu .oaact-profile-action:hover{background:var(--surface-2,#22435c)}
+.oa-admin-page .oaact-ai-form{max-width:none;width:100%}
+.oa-admin-page .oaact-ai-form label,.oa-admin-page .oaact-report-prompt{width:100%;max-width:100%;min-width:0}
+.oa-admin-page .oaact-report-prompt{height:195px;min-height:195px;max-height:195px;resize:none!important;background:var(--surface-2,#122840);color:var(--ink,#f0f5fa);border:1px solid var(--line-strong,#435b73);border-radius:10px;padding:15px;font:inherit;line-height:1.55}
+.oa-admin-page textarea:not(.cv-code-editor){resize:none}
+.oaact-ai-actions{display:flex;gap:10px;flex-wrap:wrap}
+.oaact-toast-region{position:fixed;top:18px;right:18px;z-index:2147483645;display:grid;gap:10px;width:min(385px,calc(100vw - 30px));pointer-events:none}
+.oaact-toast{pointer-events:auto;display:grid;grid-template-columns:30px minmax(0,1fr) 22px;align-items:start;gap:12px;padding:14px 13px;border:1px solid var(--line,#3d5e77);border-left:4px solid #4eaed0;border-radius:12px;background:var(--surface,#12273b);color:var(--ink,#f4f9ff);box-shadow:0 15px 40px #0007;font-size:.86rem;line-height:1.45;animation:oa-toast-enter .18s ease-out;overflow-wrap:anywhere}
+.oaact-toast--success{border-left-color:#24bc8a}.oaact-toast--danger{border-left-color:#fb7378}.oaact-toast--warning{border-left-color:#f5ba52}.oaact-toast--info{border-left-color:#51bdf0}
+.oaact-toast-icon{display:grid;place-items:center;font-weight:800;border-radius:50%;width:27px;height:27px;background:#4b728933;color:#aee7ff}.oaact-toast--success .oaact-toast-icon{color:#66e8bc}.oaact-toast--danger .oaact-toast-icon{color:#ff9398}.oaact-toast--warning .oaact-toast-icon{color:#ffcf70}
+.oaact-toast-close{border:0;background:transparent;color:inherit;font-size:1.3rem;cursor:pointer;line-height:1}
+@keyframes oa-toast-enter{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.oaact-preview-toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 16px}.oaact-preview-toolbar select{flex:1 1 240px;width:auto}
+.oaact-geo-internal-map{border:1px solid var(--line,#3a5571);border-radius:12px;padding:12px;min-height:250px;overflow:hidden}
+.cv-full-dialog{width:min(1250px,calc(100vw - 24px));max-height:94dvh;overflow:auto}
+.cv-full-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.cv-full-content{min-height:60vh}.cv-interactive-dialog{width:min(560px,calc(100vw - 24px))}.cv-payload{white-space:pre-wrap;overflow-wrap:anywhere;max-height:260px;overflow:auto;background:#081a2d;color:#aef0cb;padding:14px;border-radius:9px;font-size:.8rem}
+@media(max-width:680px){.oa-admin-page .oaact-crud-toolbar{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.oa-admin-page .oaact-crud-toolbar>input[type=search]{min-width:0;width:100%;margin:0;order:1}.oa-admin-page .oaact-crud-toolbar>.btn--primary{width:100%;order:0}.oa-admin-page .admin-table td[data-label="Acciones"]{display:flex;justify-content:flex-end;flex-wrap:wrap;text-align:right}.oa-admin-page .admin-table td[data-label="Acciones"]:before{flex-basis:100%;text-align:left}.oa-admin-page .oaact-users-actions{width:100%;flex-direction:row;justify-content:flex-end}.oa-admin-page .oaact-users-actions button{width:auto;flex:0 1 auto}.oa-admin-page .oaact-report-prompt{height:170px;min-height:170px;max-height:170px}.oaact-toast-region{top:12px;right:12px}.oaact-preview-toolbar select{flex-basis:100%}}
+
+.oa-admin-page .oaact-ai-form textarea{display:block;box-sizing:border-box;width:100%!important;max-width:100%!important;resize:none!important}
+.oa-admin-page .oaact-users-actions{margin-left:auto}
+.oa-admin-page .admin-table td[data-label="Acciones"]{text-align:right}
+.oa-admin-page .cv-form-preview label{display:block;margin-bottom:10px}
+/* CodeBuilder Studio: uses shared theme variables and is responsive. */
+.cv-designer-list{display:grid;gap:8px;margin:12px 0}
+.cv-theme-preview{padding:26px;border:5px solid;border-radius:12px;color:#fff;font-weight:700;margin:14px 0}
+
+
+:root[data-theme="light"] .oa-admin-page{--bg:#eff5fa;--surface:#ffffff;--surface-2:#f6f9fc;--ink:#172b43;--ink-2:#476078;--line:#d5e0eb;--line-strong:#bccbd9;color-scheme:light}
+:root[data-theme="dark"] .oa-admin-page{color-scheme:dark}
+:root[data-theme="light"] .oa-sidebar{background:#e4edf5;border-right-color:#c7d7e6}
+:root[data-theme="light"] .oa-sidebar .oa-brand strong{color:#17314b}
+:root[data-theme="light"] .oa-sidebar .oa-brand small, :root[data-theme="light"] .oa-sidebar .oa-nav-caption{color:#45617b}
+:root[data-theme="light"] .oa-sidebar .oa-admin-nav button,:root[data-theme="light"] .oa-sidebar .oa-sidebar-bottom a{color:#203c58}
+:root[data-theme="light"] .oa-sidebar .oa-admin-nav button.is-active{background:#c7e0f2;color:#103854;border-left-color:var(--cv-primary,#087db6)}
+:root[data-theme="light"] .oa-sidebar .oa-admin-nav button:hover{background:#d3e6f4;color:#103854}
+:root[data-theme="light"] .oaact-profile-menu{background:#ffffff;color:#17314b;border-color:#c8d8e8}
+:root[data-theme="light"] .oaact-profile-row, :root[data-theme="light"] .oaact-profile-row strong{color:#17314b}
+.cv-model-fields,.cv-model-relations{display:grid;gap:9px;margin:12px 0}
+.cv-model-field-row{display:flex;flex-wrap:wrap;align-items:center;gap:9px;border:1px solid var(--line);padding:12px;border-radius:10px}
+.cv-model-field-row>input{flex:1 1 135px;min-height:38px;padding:8px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--ink)}
+.cv-model-field-row>select{min-width:120px;min-height:38px;border-radius:6px;background:var(--surface-2);color:var(--ink);border:1px solid var(--line-strong)}
+.cv-model-field-row label{display:flex;align-items:center;gap:5px;font-size:.8rem;color:var(--ink)}
+.cv-model-json{max-height:420px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--ink)}
+@media(max-width:620px){.cv-model-field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.cv-model-field-row>input,.cv-model-field-row>select{width:100%;min-width:0}.cv-model-remove{grid-column:1/-1}}
+
+
+/* Keep notifications visible even when portaled inside a top-layer modal. */
+dialog[open] > .oaact-toast-region{position:fixed;inset:18px 18px auto auto;z-index:2147483645;width:min(440px,calc(100vw - 36px));max-height:min(60dvh,480px);overflow-y:auto;pointer-events:none}
+dialog[open] > .oaact-toast-region .oaact-toast{pointer-events:auto}

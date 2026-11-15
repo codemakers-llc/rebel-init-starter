@@ -1,0 +1,405 @@
+{
+  "requests": [
+    {
+      "id": 1001,
+      "title": "Replace network switch",
+      "description": "The switch in the east wing is unstable.",
+      "priority": "High",
+      "category": "Network",
+      "status": "Pending Review",
+      "score": null,
+      "feedback": "",
+      "assignedTo": "technician",
+      "history": [
+        {
+          "action": "Created",
+          "by": "technician",
+          "at": "2026-11-11T10:00:00Z"
+        },
+        {
+          "action": "Submitted",
+          "by": "technician",
+          "at": "2026-11-11T10:05:00Z"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "title": "Printer maintenance",
+      "description": "Office printer requires maintenance and calibration.",
+      "priority": "Normal",
+      "category": "Hardware",
+      "status": "Changes Requested",
+      "score": 2,
+      "feedback": "Please include the printer model.",
+      "assignedTo": "technician",
+      "history": [
+        {
+          "action": "Created",
+          "by": "technician",
+          "at": "2026-11-11T11:00:00Z"
+        },
+        {
+          "action": "Changes Requested",
+          "by": "admin",
+          "score": 2,
+          "feedback": "Please include the printer model.",
+          "at": "2026-11-11T11:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "title": "Software update",
+      "description": "Update the desktop productivity suite.",
+      "priority": "Low",
+      "category": "Software",
+      "status": "Approved",
+      "score": 5,
+      "feedback": "Approved.",
+      "assignedTo": "technician",
+      "history": [
+        {
+          "action": "Approved",
+          "by": "admin",
+          "score": 5,
+          "at": "2026-11-11T13:00:00Z"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Demo Developer",
+      "email": "demo@proto.local",
+      "role": "demo",
+      "active": true
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "demo",
+      "description": "Full access to the prototype interface (not production authentication)",
+      "permissions": [
+        "demo.*"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": 1,
+      "name": "Service Requests",
+      "description": "Draft → Pending Review → Approved / Changes Requested",
+      "states": [
+        "Draft",
+        "Pending Review",
+        "Changes Requested",
+        "Approved"
+      ],
+      "transitions": [
+        {
+          "from": "Draft",
+          "to": "Pending Review",
+          "action": "Submit"
+        },
+        {
+          "from": "Pending Review",
+          "to": "Approved",
+          "action": "Approve"
+        },
+        {
+          "from": "Pending Review",
+          "to": "Changes Requested",
+          "action": "Request changes"
+        },
+        {
+          "from": "Changes Requested",
+          "to": "Pending Review",
+          "action": "Resubmit"
+        }
+      ]
+    }
+  ],
+  "catalogs": {
+    "modules": [
+      {
+        "id": 1,
+        "name": "Demo",
+        "icon": "layout-dashboard",
+        "order": 1,
+        "active": true
+      },
+      {
+        "id": 2,
+        "name": "Designer",
+        "icon": "panels-top-left",
+        "order": 2,
+        "active": true
+      },
+      {
+        "id": 3,
+        "name": "Audit",
+        "icon": "activity",
+        "order": 3,
+        "active": true
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Network",
+        "description": "Network equipment and connectivity",
+        "active": true
+      },
+      {
+        "id": 2,
+        "name": "Hardware",
+        "description": "Computers and office equipment",
+        "active": true
+      },
+      {
+        "id": 3,
+        "name": "Software",
+        "description": "Licenses and applications",
+        "active": true
+      },
+      {
+        "id": 4,
+        "name": "Maintenance",
+        "description": "Preventive maintenance",
+        "active": true
+      }
+    ],
+    "criteria": [
+      {
+        "id": 1,
+        "name": "Quality",
+        "weight": 40,
+        "active": true
+      },
+      {
+        "id": 2,
+        "name": "Impact",
+        "weight": 35,
+        "active": true
+      },
+      {
+        "id": 3,
+        "name": "Feasibility",
+        "weight": 25,
+        "active": true
+      }
+    ]
+  },
+  "settings": {
+    "siteTitle": "REBEL INIT NEW",
+    "description": "Frontend prototype with one Demo workspace, JSON persistence and the complete Designer",
+    "pageSize": 8,
+    "demoNotice": "Single Demo role: prototype-only navigation, not production authentication"
+  },
+  "views": [
+    {
+      "name": "Dashboard",
+      "route": "/dashboard",
+      "file": "features/dashboard.js",
+      "icon": "layout-dashboard",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Modules",
+      "route": "/catalogs/modules",
+      "file": "features/modules.js",
+      "icon": "database",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Request Categories",
+      "route": "/catalogs/request-categories",
+      "file": "features/request-categories.js",
+      "icon": "list-tree",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Evaluation Criteria",
+      "route": "/catalogs/evaluation-criteria",
+      "file": "features/evaluation-criteria.js",
+      "icon": "clipboard-list",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Request List & Creation",
+      "route": "/requests",
+      "file": "features/request-list.js",
+      "icon": "file-text",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Request Review",
+      "route": "/request-review",
+      "file": "features/request-review.js",
+      "icon": "list-checks",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "View Designer",
+      "route": "/view-designer",
+      "file": "features/builder.js",
+      "icon": "panels-top-left",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Menu Designer",
+      "route": "/menu-designer",
+      "file": "features/menu-designer.js",
+      "icon": "list-tree",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Theme Studio",
+      "route": "/theme-studio",
+      "file": "features/theme-studio.js",
+      "icon": "palette",
+      "roles": [
+        "demo"
+      ]
+    },
+    {
+      "name": "Audit Trail",
+      "route": "/audit-trail",
+      "file": "features/audit-trail.js",
+      "icon": "activity",
+      "roles": [
+        "demo"
+      ]
+    }
+  ],
+  "generated": {},
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "primary": "#555d66",
+      "accent": "#9ba3ac"
+    },
+    "palette": "Minimal",
+    "intensity": "subtle"
+  },
+  "menuItems": [
+    {
+      "id": 1,
+      "label": "Dashboard",
+      "route": "/dashboard",
+      "moduleId": 1,
+      "icon": "layout-dashboard",
+      "order": 1,
+      "visible": true
+    },
+    {
+      "id": 3,
+      "label": "Request List & Creation",
+      "route": "/requests",
+      "moduleId": 1,
+      "icon": "file-text",
+      "order": 3,
+      "visible": true
+    },
+    {
+      "id": 4,
+      "label": "Request Review",
+      "route": "/request-review",
+      "moduleId": 1,
+      "icon": "list-checks",
+      "order": 4,
+      "visible": true
+    },
+    {
+      "id": 5,
+      "label": "View Designer",
+      "route": "/view-designer",
+      "moduleId": 2,
+      "icon": "panels-top-left",
+      "order": 5,
+      "visible": true
+    },
+    {
+      "id": 6,
+      "label": "Menu Designer",
+      "route": "/menu-designer",
+      "moduleId": 2,
+      "icon": "list-tree",
+      "order": 6,
+      "visible": true
+    },
+    {
+      "id": 7,
+      "label": "Theme Studio",
+      "route": "/theme-studio",
+      "moduleId": 2,
+      "icon": "palette",
+      "order": 7,
+      "visible": true
+    },
+    {
+      "id": 8,
+      "label": "Audit Trail",
+      "route": "/audit-trail",
+      "moduleId": 3,
+      "icon": "activity",
+      "order": 8,
+      "visible": true
+    },
+    {
+      "id": 20,
+      "label": "Modules",
+      "route": "/catalogs/modules",
+      "moduleId": 1,
+      "icon": "database",
+      "order": 2,
+      "visible": true
+    },
+    {
+      "id": 21,
+      "label": "Request Categories",
+      "route": "/catalogs/request-categories",
+      "moduleId": 1,
+      "icon": "list-tree",
+      "order": 3,
+      "visible": true
+    },
+    {
+      "id": 22,
+      "label": "Evaluation Criteria",
+      "route": "/catalogs/evaluation-criteria",
+      "moduleId": 1,
+      "icon": "clipboard-list",
+      "order": 4,
+      "visible": true
+    }
+  ],
+  "audit": [
+    {
+      "id": 1,
+      "at": "2026-11-12T12:00:00.000Z",
+      "action": "INITIALIZE",
+      "resource": "demo",
+      "detail": "Genesis PROTO seeded"
+    }
+  ]
+}

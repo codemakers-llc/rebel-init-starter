@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..');
+const read=p=>readFile(path.join(root,p),'utf8');
+test('INIT NEW inherits Genesis base/admin/responsive/theme CSS',async()=>{const html=await read('frontend/index.html');for(const f of ['rebel-base.css','rebel-admin.css','rebel-admin-refinement.css','app.css']){assert.match(html,new RegExp(f.replaceAll('.','\.')));assert.ok((await read('frontend/'+f)).length>200)}});
+test('INIT NEW has designer, dashboard, role-driven hero, Minimal seed',async()=>{const app=await read('frontend/app.js'),seed=JSON.parse(await read('scripts/data/runtime.seed.json'));assert.match(app,/profilesFromViews/);assert.match(app,/createHeroLanding/);assert.match(app,/buildMenu/);assert.equal(seed.theme.palette,'Minimal');assert.equal(seed.theme.mode,'light');assert.ok(seed.views.some(x=>x.route==='/view-designer'));assert.ok(seed.views.some(x=>x.route==='/request-review'));assert.ok(seed.views.some(x=>x.route==='/dashboard'));});
+test('INIT NEW never installs Swagger or Developer navigation',async()=>{const server=await read('scripts/server.js');assert.doesNotMatch(server,/p==='\/openapi.json'/);assert.doesNotMatch(await read('frontend/app.js'),/Developer navigation/);});
+
+test('view role names may be declaratively extended while preserving demo backend boundary',async()=>{const server=await read('scripts/server.js');assert.match(server,/v.roles.every\(r=>typeof r/);assert.match(server,/const roles=\['admin','technician','evaluator','demo'\]/);});

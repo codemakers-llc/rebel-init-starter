@@ -1,0 +1,3 @@
+// REBEL_VIEW_CONFIG: {"type":"component","component":"theme-studio","title":"Theme Studio","endpoints":["/api/proto/theme"]}
+import {mountThemeStudio} from '/rebel/theme-studio.js';
+export default {title:'Theme Studio',components:[],onMount({host}){mountThemeStudio(host,{initialTheme:{...window.rebelDemo.configStore.getTheme(),mode:document.documentElement.dataset.theme},onSaved:theme=>window.rebelDemo.configStore.patchTheme(theme),notify:window.rebelDemo.notify,request:async(url,options)=>{const res=await window.rebelDemo.request(url,options);if(!res.ok)throw Error('Theme API: '+res.status);return res.json()}})}};

@@ -1,0 +1,2 @@
+import {node,section,renderTable} from '/rebel/proto-ui.js';
+export default {title:'Audit Trail',components:[],async onMount({host,api}){const panel=section(host,'Audit Trail','Prototype operation trace · recorded by the Node.js API');const response=await api.request('/api/audit');renderTable(panel,{caption:'audit events',items:response.items||[],columns:[{key:'at',label:'Time'},{key:'action',label:'Operation'},{key:'resource',label:'Resource'},{key:'detail',label:'Details'}],pageSize:5})}};
